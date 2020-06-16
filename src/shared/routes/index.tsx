@@ -11,6 +11,7 @@ import {
   Home,
   Main,
   NotFound,
+  Hello,
   DefaultLayout,
 } from "./main";
 
@@ -67,6 +68,8 @@ export default function getRoutes(store: any) {
             title="Logout"
           />
 
+          <$Route path="hello" component={Hello} />
+
           <$Route path="error" component={Error} status={500} title="Error" />
           <$Route
             path="*"
@@ -74,6 +77,7 @@ export default function getRoutes(store: any) {
             status={404}
             title="Not Found"
           />
+
         </Route>
       </Route>
     </Route>
