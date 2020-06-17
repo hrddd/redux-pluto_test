@@ -5,5 +5,6 @@ module.exports = convert(
   ...flatten([
     require("./agreedsample/get"),
     require("./uploadsample/post"),
+    require("./hello/getComments"),
   ]),
 );
