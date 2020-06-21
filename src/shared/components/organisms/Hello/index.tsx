@@ -14,6 +14,7 @@ export default compose(
     }),
     dispatch => ({
       onChangeVisibility: () => dispatch(changeVisibility()), // changeVisibilityを store に　dispatchする関数を返す
+      onClickGetComments: () => dispatch(getComments() as any),
     }),
   ),
 )(Hello);
