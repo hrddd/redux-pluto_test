@@ -6,5 +6,6 @@ module.exports = convert(
     require("./agreedsample/get"),
     require("./uploadsample/post"),
     require("./hello/getComments"),
+    require("./hello/postComment"),
   ]),
 );
