@@ -10,10 +10,17 @@ type Props = {
   }[];
   onClickGetComments: Function;
   onChangeVisibility: Function;
+  handleSubmit: Function;
 };
 
 export default function Hello(props: Props) {
-  const { isVisible, comments, onClickGetComments, onChangeVisibility } = props;
+  const {
+    isVisible,
+    comments,
+    onClickGetComments,
+    onChangeVisibility,
+    handleSubmit,
+  } = props;
   return (
     <div>
       {isVisible &&
@@ -24,9 +31,12 @@ export default function Hello(props: Props) {
       <button type="button" onClick={() => onChangeVisibility()}>
         {isVisible ? "hide" : "show"}
       </button>
-      <div>
-        <Field name="text" component="input" type="text" />
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <Field name="text" component="input" type="text" />
+          <button type="submit">submit</button>
+        </div>
+      </form>
     </div>
   );
 }
