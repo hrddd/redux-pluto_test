@@ -6,7 +6,6 @@ import { RootState } from "../../../redux/modules/reducer";
 import Hello from "./Hello";
 
 export default compose(
-  asyncLoader((props, store) => store.dispatch(getComments())),
   connect(
     (state: RootState) => ({
       isVisible: state.app.hello.isVisible, // store の state の中から、指定した isVisible を props として渡す
@@ -17,4 +16,5 @@ export default compose(
       onClickGetComments: () => dispatch(getComments() as any),
     }),
   ),
+  asyncLoader((props, store) => store.dispatch(getComments())),
 )(Hello);
