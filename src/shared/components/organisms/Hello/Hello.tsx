@@ -7,11 +7,12 @@ type Props = {
     id: string;
     text: string;
   }[];
+  onClickGetComments: Function;
   onChangeVisibility: Function;
 };
 
 export default function Hello(props: Props) {
-  const { isVisible, onChangeVisibility, comments, onClickGetComments } = props;
+  const { isVisible, comments, onClickGetComments, onChangeVisibility } = props;
   return (
     <div>
       {isVisible &&
