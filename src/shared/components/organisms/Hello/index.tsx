@@ -1,6 +1,7 @@
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { asyncLoader } from "@recruit-tech/redux-async-loader"; // @recruit-tech/redux-asynch-roder から　asyncLoader　をインポート
+import { reduxForm } from "redux-form";
 import { changeVisibility, getComments } from "../../../redux/modules/hello";
 import { RootState } from "../../../redux/modules/reducer";
 import Hello from "./Hello";
@@ -17,4 +18,7 @@ export default compose(
     }),
   ),
   asyncLoader((props, store) => store.dispatch(getComments())),
+  reduxForm({
+    form: "hello",
+  }),
 )(Hello);

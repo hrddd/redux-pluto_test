@@ -1,4 +1,5 @@
 import React from "react";
+import { Field } from "redux-form";
 
 type Props = {
   // props の型定義
@@ -23,6 +24,9 @@ export default function Hello(props: Props) {
       <button type="button" onClick={() => onChangeVisibility()}>
         {isVisible ? "hide" : "show"}
       </button>
+      <div>
+        <Field name="text" component="input" type="text" />
+      </div>
     </div>
   );
 }
